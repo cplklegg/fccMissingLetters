@@ -1,0 +1,28 @@
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+String.prototype.charCodeAt()
+String.fromCharCode()
+
+code:
+
+function fearNotLetter(str) {
+    
+  var blank;
+  var prev = str.charCodeAt(0); 
+  for (var i = 1; i < str.length; i++) {
+    if (str.charCodeAt(i) !== prev + 1) {
+      blank = String.fromCharCode(str.charCodeAt(i) - 1);
+      return blank;
+    } 
+    else {
+      prev++;
+    }
+  }
+  return blank;
+}
